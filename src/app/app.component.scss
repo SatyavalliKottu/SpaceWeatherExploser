@@ -1,0 +1,33 @@
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensures the image covers the screen without distortion */
+  z-index: -1; /* Sends the background image behind other elements */
+}
+
+.title {
+  color: white; /* Make text visible */
+  font-size: 2.5rem; /* Adjust size as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Enhances readability */
+}
+
+.newStyles {
+  &:hover {
+    box-shadow: 0px 0px 0 5px #0056b3, 0 0px 0 5px #0056b3,
+      10px 0px 0 10px #0056b3, 15px 0 0 5px #0056b3, -10px 0 0 10px #0056b3,
+      -15px 0 0 5px #0056b3;
+    background: none;
+
+    border-bottom: solid 5px #0056b3;
+
+    background-color: #0056b3;
+  }
+}
+.cardPosition {
+  position: absolute;
+  top: 217px;
+  left: 404px;
+}

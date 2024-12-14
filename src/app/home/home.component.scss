@@ -1,0 +1,102 @@
+.home-container {
+  position: fixed; /* Ensures the container holds the background and buttons */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center buttons horizontally */
+  justify-content: center;
+  /* Center buttons vertically */
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  .home-container {
+    position: relative; /* Ensures the container holds the background and buttons */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center buttons horizontally */
+    justify-content: center; /* Center buttons vertically */
+  }
+
+  .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-size: cover; /* Ensures the image covers the screen without distortion */
+    z-index: -1; /* Places the image behind other elements */
+  }
+
+  .menu-button {
+    margin: 10px; /* Adds space between the buttons */
+  }
+  /* Ensures the image covers the screen without distortion */
+  z-index: -1; /* Places the image behind other elements */
+}
+
+// .menu-button {
+//   margin: 10px; /* Adds space between the buttons */
+// }
+
+.login-signup-button {
+  position: absolute;
+  top: 20px; /* Adjust for spacing from the top */
+  right: 20px; /* Adjust for spacing from the right */
+  background-color: #007bff; /* Customize button color */
+  color: white; /* Text color */
+}
+.btn-color {
+  background: #ce8e4e;
+  padding: 10px 20px;
+
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 31px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  a {
+    color: black;
+    &:hover {
+      color: white;
+    }
+  }
+}
+.menu-button-container {
+  position: absolute;
+  bottom: 20px; /* Adjusts the distance from the bottom */
+  width: 100%; /* Makes the container take the full width */
+  display: flex;
+  justify-content: space-around; /* Spreads buttons evenly */
+  gap: 10px; /* Adds space between the buttons */
+}
+.third {
+  background: #ce8e4e;
+  padding: 10px 20px;
+
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 31px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  color: black;
+
+  box-shadow: 0 0 40px 40px #ce8e4e inset, 0 0 10px 10px #df8c17;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.third:hover {
+  &:hover {
+    box-shadow: 0 0 32px 0 #ce4e7d inset, 0 0 22px 30px #088b8b;
+    background: none;
+    background-color: #ce8e4e;
+    color: white;
+  }
+}

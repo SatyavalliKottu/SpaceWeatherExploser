@@ -1,0 +1,73 @@
+<div *ngIf="isHomeVisible" class="home-container">
+  <img
+    class="bg-image"
+    src="../../assets/classroom.jpeg"
+    alt="Classroom Background"
+  />
+  <button mat-flat-button class="login-signup-button third btn-color m-5">
+    <a
+      class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+      routerLink="/login"
+      (click)="navigateToPage('/login')"
+      routerLinkActive="active"
+      >Login
+    </a>
+    <a
+      class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+      routerLink="/signup"
+      (click)="navigateToPage('/signup')"
+      routerLinkActive="active"
+    >
+      Signup</a
+    >
+  </button>
+  <div class="menu-button-container mb-5 pb-3">
+    <button
+      mat-raised-button
+      class="third"
+      routerLink="/about"
+      (click)="navigateToPage('/about')"
+      routerLinkActive="active"
+    >
+      About
+    </button>
+
+    <button
+      mat-raised-button
+      class="third"
+      routerLink="/teacherResource"
+      (click)="navigateToPage('/teacherResource')"
+      routerLinkActive="active"
+    >
+      Teacher Resource
+    </button>
+    <button
+      mat-raised-button
+      class="third"
+      routerLink="/vocabulary"
+      (click)="navigateToPage('/vocabulary')"
+      routerLinkActive="active"
+    >
+      Vocabulary Workout
+    </button>
+    <button
+      mat-raised-button
+      class="third"
+      routerLink="/nameofthePlanet"
+      (click)="navigateToPage('/nameofthePlanet')"
+      routerLinkActive="active"
+    >
+      Name of the Planet
+    </button>
+    <button
+      mat-raised-button
+      class="third"
+      routerLink="/K12grade"
+      (click)="navigateToPage('/ki2grade')"
+      routerLinkActive="active"
+    >
+      K12
+    </button>
+  </div>
+</div>
+<router-outlet></router-outlet>

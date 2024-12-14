@@ -1,0 +1,108 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+.mat-mdc-card.matcolor {
+  background: white !important;
+}
+.mat-mdc-text-field-wrapper .mdc-text-field {
+  background: #cac0c0 !important;
+}
+
+.login-container {
+  background-color: rgba(
+    240,
+    116,
+    14,
+    0.7
+  ); /* Semi-transparent background to make text readable */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3a50dd;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5867ef;
+}
+
+.loginpage {
+  background-image: url(../../assets/nasa_spaceweather.jpg);
+  position: absolute; /* Ensure it spans the entire viewport */
+  top: 6px;
+  left: 3px;
+  width: 100%;
+  height: 802px; /* Full height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Keeps the image centered */
+  background-repeat: no-repeat; /* Prevents image repetition */
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-size: cover; /* Ensures the image covers the screen without distortion */
+  z-index: -1; /* Places the image behind other elements */
+}
