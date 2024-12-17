@@ -21,53 +21,39 @@
       Signup</a
     >
   </button>
-  <div class="menu-button-container mb-5 pb-3">
-    <button
-      mat-raised-button
-      class="third"
-      routerLink="/about"
-      (click)="navigateToPage('/about')"
-      routerLinkActive="active"
-    >
+  <div class="menu-button-container">
+    <button mat-raised-button class="third" (click)="loadComponent('about')">
       About
     </button>
-
     <button
       mat-raised-button
       class="third"
-      routerLink="/teacherResource"
-      (click)="navigateToPage('/teacherResource')"
-      routerLinkActive="active"
+      (click)="loadComponent('teacherResource')"
     >
       Teacher Resource
     </button>
     <button
       mat-raised-button
       class="third"
-      routerLink="/vocabulary"
-      (click)="navigateToPage('/vocabulary')"
-      routerLinkActive="active"
+      (click)="loadComponent('vocabulary')"
     >
       Vocabulary Workout
     </button>
     <button
       mat-raised-button
       class="third"
-      routerLink="/nameofthePlanet"
-      (click)="navigateToPage('/nameofthePlanet')"
-      routerLinkActive="active"
+      (click)="loadComponent('nameofthePlanet')"
     >
       Name of the Planet
     </button>
-    <button
-      mat-raised-button
-      class="third"
-      routerLink="/K12grade"
-      (click)="navigateToPage('/ki2grade')"
-      routerLinkActive="active"
-    >
+    <button mat-raised-button class="third" (click)="loadComponent('K12grade')">
       K12
     </button>
   </div>
 </div>
-<router-outlet></router-outlet>
+
+<app-dynamic-render
+  *ngIf="!isHomeVisible"
+  [component]="currentComponent"
+  [showBackButton]="true"
+></app-dynamic-render>

@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-
+import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-teacher-resource',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule],
   templateUrl: './teacher-resource.component.html',
-  styleUrl: './teacher-resource.component.scss'
+  styleUrl: './teacher-resource.component.scss',
 })
-export class TeacherResourceComponent {
-
-}
+export class TeacherResourceComponent {}

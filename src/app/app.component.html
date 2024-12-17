@@ -24,7 +24,4 @@
   </mat-card-content>
 </mat-card>
 
-<router-outlet
-  *ngIf="isAppVisible"
-  [ngComponentOutlet]="homeComponent"
-></router-outlet>
+<router-outlet *ngIf="isAppVisible"></router-outlet>

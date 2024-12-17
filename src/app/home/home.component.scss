@@ -15,33 +15,9 @@
   left: 0;
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  .home-container {
-    position: relative; /* Ensures the container holds the background and buttons */
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center buttons horizontally */
-    justify-content: center; /* Center buttons vertically */
-  }
-
-  .bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background-size: cover; /* Ensures the image covers the screen without distortion */
-    z-index: -1; /* Places the image behind other elements */
-  }
-
-  .menu-button {
-    margin: 10px; /* Adds space between the buttons */
-  }
-  /* Ensures the image covers the screen without distortion */
+  background-size: cover; /* Ensures the image covers the screen without distortion */
   z-index: -1; /* Places the image behind other elements */
 }
-
 // .menu-button {
 //   margin: 10px; /* Adds space between the buttons */
 // }

@@ -1,0 +1,105 @@
+<div class="main-content">
+  <div class="container-fluid vocabulary-container py-4">
+    <!-- Background Image -->
+    <img
+      class="b-image"
+      src="../../assets/pexels-photo-207529 (1).jpeg"
+      alt="room"
+    />
+    <!-- Vocabulary Header -->
+    <div class="row text-center">
+      <div class="col-12">
+        <mat-toolbar color="primary" class="justify-content-center">
+          <span class="h3 font-weight-bold">Vocabulary Workout</span>
+        </mat-toolbar>
+      </div>
+    </div>
+
+    <!-- Dynamic Vocabulary Cards -->
+    <div class="row mt-4 px-4">
+      <div
+        class="col-lg-4 col-md-6 col-sm-12 mb-4"
+        *ngFor="let term of vocabularyTerms"
+      >
+        <mat-card
+          class="vocabulary-card"
+          *ngIf="term.title && term.description"
+          appearance="outlined"
+        >
+          <mat-card-title class="d-flex justify-content-center">{{
+            term.title
+          }}</mat-card-title>
+          <img
+            mat-card-avatar
+            *ngIf="term.image"
+            [src]="term.image"
+            alt="{{ term.title }}"
+            class="img-fluid mt-2 avatarimg"
+          />
+
+          <mat-card-content class="d-flex justify-content-center">
+            {{ term.description }}
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Activity Section -->
+    <div
+      class="row text-center mt-4"
+      *ngIf="
+        vocabularyTerms.length > 0 &&
+        vocabularyTerms[vocabularyTerms.length - 1]?.SpaceWeather
+      "
+    >
+      <div
+        class="row text-center mt-4"
+        *ngIf="
+          vocabularyTerms.length > 0 &&
+          vocabularyTerms[vocabularyTerms.length - 1]?.SpaceWeather
+        "
+      >
+        <div class="container row">
+          <div class="col-4">
+            <img
+              mat-card-xl-image
+              src="../../assets/SPACE WEATHER.jpg"
+              alt="SPACE WEATHER"
+              class="img-fluid"
+            />
+          </div>
+          <mat-card
+            class="vocabulary-card col-8 d-flex justify-content-center"
+            appearance="outlined"
+          >
+            <mat-card-title class="fw-bold">
+              {{
+                vocabularyTerms[vocabularyTerms.length - 1]?.SpaceWeather?.title
+              }}
+            </mat-card-title>
+
+            <mat-card-content>
+              <p class="text-break m-3 p-5">
+                {{
+                  vocabularyTerms[vocabularyTerms.length - 1]?.SpaceWeather
+                    ?.description
+                }}
+              </p>
+            </mat-card-content>
+
+            <mat-card-actions>
+              <button
+                class="btn-style"
+                mat-raised-button
+                color="primary"
+                (click)="openDialog('0ms', '0ms')"
+              >
+                Activity
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

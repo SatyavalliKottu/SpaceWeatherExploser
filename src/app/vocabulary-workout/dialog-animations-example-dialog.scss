@@ -1,0 +1,121 @@
+.dialog-container {
+  display: inline;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow-y: hidden;
+  background: black;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+// mat-dialog-container .mat-mdc-dialog-container .mdc-dialog__surface {
+//   background-color: inherit !important;
+// }
+
+.card-container {
+  perspective: 1000px; /* Enable 3D effect */
+  margin: 0.5rem;
+}
+
+.card {
+  width: 483px;
+  height: 493px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  cursor: pointer;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.tp-wrapper {
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+
+.tp-box {
+  position: relative;
+  width: 483px;
+  height: 493px;
+  margin: 3rem auto;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: transform 1s;
+  -ms-transform: transform 1s;
+  transform: transform 1s;
+}
+.tp-box__side {
+  width: 65%;
+  height: 100%;
+  position: absolute;
+  left: 65px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  color: #fff;
+  text-align: center;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tp-box__front {
+  background: #0f0c0c;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  border-radius: 40px;
+  /* transition: transform 0.3s, box-shadow 0.3s; */
+  box-shadow: 0 0 40px 9px #ce8e4e inset, 0 0 10px 10px #df8c17;
+}
+.tp-box__back {
+  background: #23262d;
+  padding: 50px 0 20px 0;
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  border-radius: 40px;
+
+  box-shadow: 0 0 40px 9px #ce8e4e inset, 0 0 10px 10px #df8c17;
+}
+
+.navigation-buttons {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+.avatarimg {
+  width: 203px;
+  height: 172px;
+  margin-top: 60px;
+  margin-bottom: 35px;
+}

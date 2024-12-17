@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
-  constructor(private router: Router) {}
+  constructor(private location: Location, private router: Router) {}
+
+  // goBack(): void {
+  //   this.location.back(); // This will navigate back to the previous page
+  // }
 }

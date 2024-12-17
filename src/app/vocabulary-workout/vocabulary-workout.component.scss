@@ -1,1 +1,63 @@
+.b-image {
+  position: fixed; /* Keep the image fixed in the background */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Maintain aspect ratio and cover entire screen */
+  z-index: -1; /* Push image behind content */
+}
 
+.vocabulary-container {
+  position: relative; /* Ensure the container is over the background image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Content starts from the top */
+  align-items: center; /* Center content horizontally */
+  padding: 2rem; /* Add padding around the content */
+  min-height: 100vh; /* Expand container height dynamically */
+  overflow-y: auto; /* Enable scrolling for long content */
+  color: white;
+}
+
+.vocabulary-card {
+  background: #333; /* Dark card background */
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vocabulary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+mat-toolbar {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .vocabulary-card {
+    font-size: 0.9rem; /* Adjust text size for smaller screens */
+  }
+
+  mat-toolbar span {
+    font-size: 1.2rem; /* Adjust toolbar font size for smaller screens */
+  }
+}
+
+.avatarimg {
+  width: 122px;
+  height: 104px;
+  margin-left: 149px;
+}
+.btn-style {
+  margin-left: 44%;
+}
+
+.blur-background {
+  filter: blur(8px);
+  pointer-events: none; /* Prevent interaction with the background */
+}

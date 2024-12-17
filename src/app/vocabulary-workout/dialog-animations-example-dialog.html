@@ -1,0 +1,33 @@
+<div class="container dialog-container">
+  <div class="tp-wrapper">
+    <div class="tp-box" [@flipState]="flip" (click)="toggleFlip()">
+      <!-- Front Side -->
+      <div class="tp-box__side tp-box__front">
+        <img
+          mat-card-avatar
+          class="avatarimg"
+          [src]="terms[activeTermIndex]?.image"
+          [alt]="terms[activeTermIndex]?.title"
+        />
+        <h2 class="text-decoration-underline">
+          {{ terms[activeTermIndex]?.title }}
+        </h2>
+        <div class="navigation-buttons">
+          <button class="btnnav" mat-button (click)="previousTerm()">
+            Previous
+          </button>
+          <button class="btnnav" mat-button (click)="nextTerm()">
+            {{ activeTermIndex === terms.length - 1 ? 'Play Again' : 'Next' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Back Side -->
+      <div class="tp-box__side tp-box__back">
+        <p class="text-break m-3 p-3">
+          {{ terms[activeTermIndex]?.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

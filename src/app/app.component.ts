@@ -1,4 +1,4 @@
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   Router,
@@ -20,23 +20,24 @@ import { MatButtonModule } from '@angular/material/button';
     RouterLinkActive,
     MatCardModule,
     MatButtonModule,
+    HomeComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  homeComponent = HomeComponent;
+  // homeComponent = HomeComponent;
   isAppVisible = false;
-  constructor(private router: Router, private location: Location) {}
+  constructor(private router: Router) {}
   // title = 'SpaceWeatherExploser';
 
   hideAppComponent() {
     this.router.navigate(['home']);
     this.isAppVisible = true;
   }
-  goBack() {
-    this.location.back();
-  }
+  // goBack() {
+  //   this.location.back();
+  // }
   // goForward() {
   //   this.location.forward();
   // }
