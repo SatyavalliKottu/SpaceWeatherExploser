@@ -22,32 +22,51 @@
     >
   </button>
   <div class="menu-button-container">
-    <button mat-raised-button class="third" (click)="loadComponent('about')">
+    <button
+      mat-raised-button
+      class="third"
+      routerLink="/about"
+      (click)="navigateToPage('/about')"
+      routerLinkActive="active"
+    >
       About
     </button>
+
     <button
       mat-raised-button
       class="third"
-      (click)="loadComponent('teacherResource')"
+      routerLink="/k12"
+      (click)="navigateToPage('/k12')"
+      routerLinkActive="active"
     >
-      Teacher Resource
+      Learning module
     </button>
     <button
       mat-raised-button
       class="third"
-      (click)="loadComponent('vocabulary')"
+      routerLink="/vocabulary"
+      (click)="navigateToPage('/vocabulary')"
+      routerLinkActive="active"
     >
       Vocabulary Workout
     </button>
     <button
       mat-raised-button
       class="third"
-      (click)="loadComponent('nameofthePlanet')"
+      routerLink="/nameoftheplanet"
+      (click)="navigateToPage('/nameoftheplanet')"
+      routerLinkActive="active"
     >
       Name of the Planet
     </button>
-    <button mat-raised-button class="third" (click)="loadComponent('K12grade')">
-      K12
+    <button
+      mat-raised-button
+      class="third"
+      routerLink="/teacher-resource"
+      (click)="navigateToPage('/teacher-resource')"
+      routerLinkActive="active"
+    >
+      Teacher Resource
     </button>
   </div>
 </div>

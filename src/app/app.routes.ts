@@ -7,9 +7,14 @@ import { TeacherResourceComponent } from './teacher-resource/teacher-resource.co
 import { VocabularyWorkoutComponent } from './vocabulary-workout/vocabulary-workout.component';
 import { NameofthePlanetComponent } from './nameofthe-planet/nameofthe-planet.component';
 import { K12Component } from './k12/k12.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '',
+    pathMatch: 'full',
+    component: AppComponent,
+  },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },

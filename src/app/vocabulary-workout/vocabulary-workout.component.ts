@@ -236,7 +236,7 @@ export class DialogAnimationsExampleDialog {
       setTimeout(() => {
         // Delay the closing or transition of the dialog (3 seconds here)
         this.dialogRef.close();
-      }, 6000); // 3000 milliseconds = 3 seconds
+      }, 1000); // 3000 milliseconds = 3 seconds
     }
   }
 
