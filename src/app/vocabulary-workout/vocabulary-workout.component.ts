@@ -29,6 +29,7 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-vocabulary-workout',
@@ -115,7 +116,176 @@ export class VocabularyWorkoutComponent {
     {
       title: 'SUN’S ATMOSPHERE',
       description: 'The hot layer of gas around the Sun.',
-      image: '../../assets/sun.jpg',
+      image: '../../assets/TheSunsAtmosphere.jpg',
+    },
+    {
+      title: 'Atoms',
+      description:
+        'eeny,  tiny elements that have  a nucleus containing protons which are positively charged  particles + and neutrons which are neutral  particles.',
+      image: '../../assets/atom image.jpg',
+    },
+    {
+      title: 'Matter',
+      description: 'anything that takes up space and has weight.',
+      image: '../../assets/matter.png',
+    },
+    {
+      title: 'Elements',
+      description: 'fundamental materials of which all matter is composed.',
+      image: '../../assets/element.jpg',
+    },
+    {
+      title: 'Molecules',
+      description:
+        'atoms bond together, which are the building blocks of all physical substances.',
+      image: '../../assets/molecules.webp',
+    },
+    {
+      title: 'Energy',
+      description: 'The ability to do work or cause change.',
+      image: '../../assets/energy.jpg',
+    },
+    {
+      title: 'Heat Transfer',
+      description: 'The energy of anything moving.',
+      image: '../../assets/heat transfer.webp',
+    },
+    {
+      title: 'Thermal Energy',
+      description: 'The energy of heat!.',
+      image: '../../assets/thermal energy.webp',
+    },
+    {
+      title: 'Electromagnetic Energy',
+      description:
+        'Energy formed from electricity and magnetism, carried by oscillating electric and magnetic fields in the form of  invisible waves that can travel far and move through empty space.',
+      image: '../../assets/electromagnetic magnetic.png',
+    },
+    {
+      title: 'Magnetism',
+      description:
+        'A powerful, invisible force that can cause certain objects like metals to move (push or pull) without touching.',
+      image: '../../assets/magnetism.webp',
+    },
+    {
+      title: 'Radiation',
+      description:
+        'when heat or energy travels through empty space as invisible waves without needing a continuous push or pull.',
+      image: '../../assets/radiation.jpg',
+    },
+    {
+      title: 'Solar Wind',
+      description:
+        'A stream of charged particles released from the Sun’s outer atmosphere, traveling through space.',
+      image: '../../assets/solar wind.jpg',
+    },
+    {
+      title: 'Magnetosphere',
+      description:
+        'The region around Earth controlled by its magnetic field, protecting the planet from solar wind.',
+      image: '../../assets/Magnetosphere.webp',
+    },
+    {
+      title: 'Geomagnetic Storm',
+      description:
+        'A disturbance in Earth’s magnetic field caused by solar activity, which can disrupt communications and power grids.',
+      image: '../../assets/geomagnetic-storm.png',
+    },
+    {
+      title: 'Solar Flare',
+      description:
+        'A sudden and intense burst of energy from the Sun’s surface, releasing radiation and charged particles.',
+      image: '../../assets/solar flare.jpeg',
+    },
+    {
+      title: 'Coronal Mass Ejection (CME)',
+      description:
+        ' A large expulsion of plasma and magnetic field from the Sun’s corona that can impact Earth’s space environment.',
+      image: '../../assets/coronal mass ejection.webp',
+    },
+    {
+      title: 'Aurora ',
+      description:
+        'A natural light display (such as the Northern and Southern Lights) caused by charged particles interacting with Earth’s atmosphere.',
+      image: '../../assets/Aurora vocabulary.jpg',
+    },
+    {
+      title: 'Plasma',
+      description:
+        'A state of matter consisting of electrically charged particles, found in the Sun and solar wind.',
+      image: '../../assets/Plasma-globe.jpg',
+    },
+    {
+      title: 'Ionosphere',
+      description:
+        'A layer of Earth’s upper atmosphere filled with charged particles that affect radio waves and GPS signals.',
+      image: '../../assets/Ionosphere.jpg',
+    },
+    {
+      title: 'Radiation Belt',
+      description:
+        'Zones of high-energy charged particles trapped by Earth’s magnetic field, such as the Van Allen Belts.',
+      image: '../../assets/Radiation belt.jpg',
+    },
+    {
+      title: 'Cosmic Rays',
+      description:
+        'High-energy particles from space that can impact Earth’s atmosphere and pose risks to astronauts.',
+      image: '../../assets/Cosmic-Ray.webp',
+    },
+    {
+      title: 'Solar Cycle',
+      description:
+        'The approximately 11-year cycle of increasing and decreasing solar activity.',
+      image: '../../assets/solar cycle.jpg',
+    },
+    {
+      title: 'Sunspot',
+      description:
+        ' A darker, cooler area on the Sun’s surface caused by magnetic activity.',
+      image: '../../assets/sunspot vocabulary.jpg',
+    },
+    {
+      title: 'Heliosphere',
+      description:
+        'The vast bubble-like region of space influenced by the Sun’s solar wind.',
+      image: '../../assets/heliosphere.jpg',
+    },
+    {
+      title: 'Interplanetary Magnetic Field (IMF)',
+      description:
+        'The Sun’s magnetic field carried through space by the solar wind.',
+      image: '../../assets/interplanetary field.jpg',
+    },
+    {
+      title: 'Satellite Drag',
+      description:
+        'The effect of increased atmospheric density due to space weather, which slows down satellites.',
+      image: '../../assets/satellite drag.jpeg',
+    },
+    {
+      title: 'Radio Blackout',
+      description:
+        'A disruption in radio communications caused by solar flares affecting the ionosphere.',
+      image: '../../assets/radio blackout.jpg',
+    },
+    {
+      title: 'Space Weather Forecasting',
+      description:
+        'The science of predicting changes in space weather to protect satellites, astronauts, and power systems on Earth.',
+      image: '../../assets/space weather vocubulary.webp',
+    },
+    {
+      title: 'Electromagnetic Spectrum',
+      description:
+        'The range of all types of electromagnetic radiation, including visible light, X-rays, and radio waves.',
+      image: '../../assets/electromagnetic spectrum.jpeg',
+    },
+    {
+      title: 'Solar Observatory ',
+      description:
+        'A space-based or ground-based telescope used to study the Sun’s activity and its effects on space weather.',
+      image: '../../assets/solar observatory.webp',
     },
 
     {
@@ -133,6 +303,7 @@ export class VocabularyWorkoutComponent {
     (term) => !term.SpaceWeather
   );
 
+  constructor(private location: Location) {}
   readonly dialog = inject(MatDialog);
 
   openDialog(
@@ -153,6 +324,9 @@ export class VocabularyWorkoutComponent {
         this.filteredVocabularyTerms = result();
       }
     });
+  }
+  goBack(): void {
+    this.location.back(); // This will navigate back to the previous page
   }
 }
 @Component({

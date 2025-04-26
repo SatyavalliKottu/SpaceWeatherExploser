@@ -1,0 +1,50 @@
+<!-- Background Image -->
+<img
+  class="fullscreen-bg"
+  src="../../assets/bg-aboutpage.webp"
+  alt="Background Image"
+/>
+
+<!-- Main Game Container -->
+<div class="game-container">
+  <i
+    class="bi bi-house-door home-icon position-absolute top-0 start-0 m-4 fs-3 text-white"
+    (click)="goBack()"
+  ></i>
+
+  <div class="container text-center text-white px-3">
+    <div>
+      <h1 class="fw-bold pb-4">ACTIVITIES!</h1>
+    </div>
+
+    <!-- Activity Links -->
+    <div class="d-flex flex-column gap-4">
+      <a
+        class="activity-link"
+        routerLink="/vocabulary"
+        (click)="navigateToPage('/vocabulary')"
+        routerLinkActive="active"
+      >
+        1. Vocabulary Workout
+      </a>
+
+      <a
+        class="activity-link"
+        routerLink="/nameoftheplanet"
+        (click)="navigateToPage('/nameoftheplanet')"
+        routerLinkActive="active"
+      >
+        2. Name of the Planet
+      </a>
+
+      <a
+        class="activity-link position-style"
+        routerLink="/matchIt"
+        (click)="navigateToPage('/matchIt')"
+        routerLinkActive="active"
+      >
+        3. Match IT Right
+      </a>
+    </div>
+  </div>
+</div>

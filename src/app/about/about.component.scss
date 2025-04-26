@@ -1,58 +1,80 @@
-.fullscreen-bg {
+.about-container {
+  // background-color: #3c5e79;
+  color: white;
+  position: relative;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.home-icon {
+  color: #848ea8;
+  font-size: 3rem;
+  cursor: pointer;
   position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+.fullscreen-bg {
+  position: fixed; /* Keep the image fixed in the background */
   top: 0;
   left: 0;
   width: 100vw; /* Full viewport width */
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Maintain aspect ratio and cover entire screen */
+  z-index: -1;
 } /* Full viewport height */
-.about-container {
-  color: white;
-  position: relative; /* Ensures the container holds the background and buttons */
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center buttons horizontally */
-  justify-content: center; /* Center buttons vertically */
-}
-
-.icon {
-  width: 30px;
-  height: 30px;
-}
-
-.home-icon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
 
 h1 {
-  margin: 0;
+  font-size: 2.5rem;
+  color: #848ea8;
 }
 
-.content {
-  position: relative;
-  z-index: 2;
-  font-size: 28px;
-  line-height: 1.6;
-  text-align: center;
-  padding: 0 20px;
-  width: 80%;
-}
-.home-icon {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 101px; /* Adjust the size of the icon */
-  color: white;
-  cursor: pointer; /* Changes the cursor to a pointer */
-  z-index: 3; /* Ensure it's above all other elements */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: adds visibility over the background */
+h2 {
+  font-size: 1.8rem;
+  color: #848ea8;
+  font-weight: 800;
 }
 
-/* Fullscreen background image */
-body {
-  margin: 0;
-  overflow: hidden;
+h3 {
+  font-size: 1.4rem;
+  color: #848ea8;
+  font-weight: 600;
+}
+
+p,
+li {
+  color: #c4d3e4;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .home-icon {
+    font-size: 1.5rem;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+  }
 }

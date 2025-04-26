@@ -7,6 +7,7 @@
   align-items: center; /* Center buttons horizontally */
   justify-content: center;
   /* Center buttons vertically */
+  background: #3c5e79;
 }
 
 .bg-image {
@@ -14,13 +15,10 @@
   top: 0;
   left: 0;
   width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  height: 85vh; /* Full viewport height */
   background-size: cover; /* Ensures the image covers the screen without distortion */
   z-index: -1; /* Places the image behind other elements */
 }
-// .menu-button {
-//   margin: 10px; /* Adds space between the buttons */
-// }
 
 .login-signup-button {
   position: absolute;
@@ -28,6 +26,7 @@
   right: 20px; /* Adjust for spacing from the right */
   background-color: #007bff; /* Customize button color */
   color: white; /* Text color */
+  // box-shadow: 0 0 40px 40px #738283 inset, 0 0 10px 10px #caa2c5;
 }
 .btn-color {
   background: #ce8e4e;
@@ -45,34 +44,99 @@
     }
   }
 }
+
 .menu-button-container {
   position: absolute;
-  bottom: 20px; /* Adjusts the distance from the bottom */
-  width: 100%; /* Makes the container take the full width */
+  bottom: 12px;
   display: flex;
-  justify-content: space-around; /* Spreads buttons evenly */
-  gap: 10px; /* Adds space between the buttons */
+  justify-content: center;
+  gap: 1rem;
+  background: none !important;
+  // box-shadow: 0px 0px 25px 216px rgb(147 168 168) inset, 0 0 10px 34px #7e7272;
+  // box-shadow: 0 0 0px 17px #9cb39f;
+  z-index: 1;
+  width: 100%;
 }
 .third {
-  background: #ce8e4e;
-  padding: 10px 20px;
-
+  width: 17%;
+  font-weight: 600;
+  padding: 10px 10px;
+  background: #dfeece;
   text-decoration: none;
   font-size: 1.2rem;
   border-radius: 31px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  // box-shadow: 2px 2px 6px rgb(231 147 77);
   transition: all 0.3s ease;
   color: black;
 
-  box-shadow: 0 0 40px 40px #ce8e4e inset, 0 0 10px 10px #df8c17;
+  // box-shadow: 0 0 40px 40px #ce8e4e inset, 0 0 10px 10px #df8c17;
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
 }
 .third:hover {
   &:hover {
-    box-shadow: 0 0 32px 0 #ce4e7d inset, 0 0 22px 30px #088b8b;
-    background: none;
-    background-color: #ce8e4e;
+    background: #c97b9c;
+    box-shadow: 0 0 20px 0 #32224b inset, 0 0 17px 10px #121212;
+
+    // background-color: #000000;
     color: white;
+    border: 1px solid white;
+    // width: 20%;
   }
+}
+
+@media (max-width: 768px) {
+  .bg-image {
+    height: 58vh;
+  }
+  .third {
+    width: 46%;
+    /* padding: 10px 10px; */
+    background: #dfeece;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 31px;
+    // box-shadow: 2px 105px 173px rgb(65 223 222);
+    transition: all 0.3s ease;
+    color: black;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    margin-bottom: 4px;
+  }
+  .third:hover {
+    &:hover {
+      background: #c97b9c;
+      box-shadow: 0 0 20px 0 #32224b inset, 0 0 17px 10px #121212;
+
+      // background-color: #000000;
+      color: white;
+      border: 1px solid white;
+      // width: 20%;
+    }
+  }
+
+  .menu-button-container {
+    flex-direction: column;
+    align-items: center;
+    height: 38%;
+
+    bottom: 6px;
+
+    gap: 0 !important;
+  }
+
+  .login-signup-button {
+    flex-direction: column;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+::ng-deep .mat-tab-label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+::ng-deep .mat-tab-body {
+  background-color: #f9f9f9;
 }

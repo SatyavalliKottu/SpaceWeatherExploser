@@ -1,0 +1,188 @@
+<div class="background-container" *ngIf="showMatchIntro || showGameScreen">
+  <img
+    src="../../assets/space_background.png"
+    alt="Signup background"
+    class="fullscreen-bg"
+  />
+  <div class="d-flex p-3 flex-row-reverse">
+    <i
+      class="bi bi-arrow-left-circle text-white home-icon"
+      (click)="goBack()"
+    ></i>
+  </div>
+  <div class="content-box container text-center text-white">
+    <h2 class="title h2-style">MATCH THE CORRECT ANSWER</h2>
+
+    <p class="description mt-4" *ngIf="showMatchIntro">
+      Welcome to <strong>"Match It Right!"</strong> – a fun and interactive game
+      to test your matching skills. Connect related items like words, images,
+      numbers, or concepts by drag and drop to see if you can get them all
+      right! Enjoy colorful visuals and exciting challenges while boosting your
+      logic, memory, and problem-solving skills! 🎯✨
+    </p>
+
+    <div class="continue-btn-container mt-4" *ngIf="showMatchIntro">
+      <button class="btn btn-primary btn-style mt-3" (click)="goToGameScreen()">
+        Continue
+      </button>
+    </div>
+
+    <div *ngIf="showGameScreen">
+      <button
+        class="btn btn-primary btn-styles fs-1 p-2 me-5 mt-5"
+        (click)="goToMatchIt()"
+      >
+        Start a tour
+      </button>
+      <button
+        class="btn btn-primary btn-styles fs-1 p-2 mt-5"
+        (click)="goToSkip()"
+      >
+        Skip
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Final Game Screen -->
+<div *ngIf="showMatchIt" class="background-container">
+  <img class="fullscreen-bg" src="../../assets/nameOfPlanetBg.gif" alt="bg" />
+  <div class="d-flex p-3 flex-row-reverse">
+    <i
+      class="bi bi-arrow-left-circle text-white home-icon"
+      (click)="goBack()"
+    ></i>
+  </div>
+  <div class="content-match container text-center">
+    <mat-card class="example-card card-style" appearance="outlined">
+      <h2 class="h2-style fs-1 pt-2">Match it Right</h2>
+
+      <div class="content-container align-items-center container">
+        <!-- Left items -->
+        <div class="list">
+          <div class="item" *ngFor="let item of leftItems" [draggable]="false">
+            {{ item.id }}. {{ item.label }}
+          </div>
+        </div>
+
+        <p class="bg-success rounded p-2">Match the Right Answer</p>
+
+        <!-- Right items -->
+        <div class="list">
+          <div class="item" *ngFor="let answer of rightItems">
+            {{ answer }}
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="btn btn-primary btn-style btn-style-match fs-1 mt-5 mb-5"
+        (click)="letsGo()"
+      >
+        Lets Go!
+      </button>
+    </mat-card>
+  </div>
+</div>
+
+<div *ngIf="showMatchItCorrect" class="background-container">
+  <img class="fullscreen-bg" src="../../assets/nameOfPlanetBg.gif" alt="bg" />
+  <div class="d-flex p-3 flex-row-reverse">
+    <i
+      class="bi bi-arrow-left-circle text-white home-icon"
+      (click)="goBack()"
+    ></i>
+  </div>
+  <div class="content-match container text-center">
+    <mat-card class="example-card card-style" appearance="outlined">
+      <!-- <div class="d-flex justify-content-end p-3">
+        <i
+          class="bi bi-arrow-left-circle text-dark home-icon1"
+          (click)="goBackFromPopup()"
+        ></i>
+      </div> -->
+      <h2 class="h2-style fs-1 pt-2">Match it correct</h2>
+      <!-- ✅ Score Display -->
+      <p class="h4-style mt-3 text-white">
+        Your Score: {{ getScorePercentage() }}%
+      </p>
+      <div class="content-container align-items-center container">
+        <!-- Left items -->
+        <div class="list">
+          <div
+            class="item"
+            *ngFor="let item of leftItems"
+            [draggable]="true"
+            (dragstart)="onDragStart($event, item.label)"
+          >
+            {{ item.id }}. {{ item.label }}
+          </div>
+        </div>
+
+        <!-- Right items -->
+        <div class="list">
+          <div
+            class="item"
+            *ngFor="let answer of rightItems"
+            [ngClass]="feedback[answer]"
+            (dragover)="$event.preventDefault()"
+            (drop)="onDrop($event, answer)"
+          >
+            {{
+              matches[answer]
+                ? matches[answer] +
+                  " " +
+                  (feedback[answer] === "correct" ? "✅" : "❌")
+                : answer
+            }}
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="btn btn-primary btn-style btn-style-match fs-1 mt-1 mb-5"
+        (click)="goToSkip()"
+      >
+        Lets Go!
+      </button>
+    </mat-card>
+  </div>
+</div>
+
+<!-- ✅ Congratulations Popup -->
+<div *ngIf="showCongrats" class="popup-overlay">
+  <div class="popup-content success">
+    <span class="close-btn" (click)="closePopup()">×</span>
+    <h2>🎉 Congratulations!</h2>
+    <p>You matched it correctly!</p>
+    <button class="btn btn-light mt-3" (click)="closePopup()">Back</button>
+  </div>
+</div>
+
+<!-- ❌ Wrong Popup -->
+<div *ngIf="showWrong" class="popup-overlay">
+  <div class="popup-content error">
+    <span class="close-btn" (click)="closePopup()">×</span>
+    <h2>❌ InCorrect</h2>
+    <p>Try again!</p>
+    <button class="btn btn-light mt-3" (click)="goBackFromPopup()">Back</button>
+  </div>
+</div>
+
+<div *ngIf="showCertificate" class="popup-overlay">
+  <div class="popup-content success">
+    <span class="close-btn" (click)="showCertificate = false">×</span>
+    <h2>🎓 Certificate of Achievement</h2>
+    <p>
+      Congratulations <br />
+      for successfully completing <strong>Matching</strong><br />
+      with a perfect score of <strong>100%</strong>!<br />
+    </p>
+    <button
+      class="btn btn-success mt-3"
+      (click)="goBackFromPopup(); this.showCertificate = false"
+    >
+      Close
+    </button>
+  </div>
+</div>

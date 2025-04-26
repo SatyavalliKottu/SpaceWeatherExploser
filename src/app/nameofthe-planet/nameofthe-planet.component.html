@@ -1,23 +1,161 @@
-<!-- Fullscreen Background -->
-<img src="../../assets/Aboutimg.jpeg" alt="Background" class="fullscreen-bg" />
+<img
+  src="../../assets/nameOfThePlanet.jpg"
+  usemap="#planetMap"
+  class="fullscreen-bg"
+  alt="Solar System"
+/>
 
+<map name="planetMap">
+  <area
+    shape="rect"
+    coords="30,630,130,720"
+    href="#"
+    alt="Sun"
+    (click)="handleClick($event, 'sun')"
+  />
+  <area
+    shape="rect"
+    coords="140,630,240,720"
+    href="#"
+    alt="Mercury"
+    (click)="handleClick($event, 'mercury')"
+  />
+  <area
+    shape="rect"
+    coords="250,630,350,720"
+    href="#"
+    alt="Venus"
+    (click)="handleClick($event, 'venus')"
+  />
+  <area
+    shape="rect"
+    coords="360,630,460,720"
+    href="#"
+    alt="Earth"
+    (click)="handleClick($event, 'earth')"
+  />
+  <area
+    shape="rect"
+    coords="470,630,570,720"
+    href="#"
+    alt="Mars"
+    (click)="handleClick($event, 'mars')"
+  />
+  <area
+    shape="rect"
+    coords="580,630,680,720"
+    href="#"
+    alt="Jupiter"
+    (click)="handleClick($event, 'jupiter')"
+  />
+  <area
+    shape="rect"
+    coords="690,630,790,720"
+    href="#"
+    alt="Saturn"
+    (click)="handleClick($event, 'saturn')"
+  />
+  <area
+    shape="rect"
+    coords="800,630,900,720"
+    href="#"
+    alt="Uranus"
+    (click)="handleClick($event, 'uranus')"
+  />
+  <area
+    shape="rect"
+    coords="910,630,1010,720"
+    href="#"
+    alt="Neptune"
+    (click)="handleClick($event, 'neptune')"
+  />
+</map>
+
+<!-- Go Back Icon -->
 <div class="about-container">
-  <i class="bi bi-house-door home-icon"></i>
-  <div class="content">
-    <h1
-      class="align-item-center p-3 m-5 underline fw-semibold text-decoration-underline"
-    >
-      About
-    </h1>
-    <p class="fw-semibold">
-      Space weather refers to the conditions in space that affect Earth and our
-      technology. It's all about understanding how energy and particles from the
-      Sun interact with Earth. Space weather can impact things like satellites,
-      power grids, and even astronauts in space. For example, when the Sun
-      releases a burst of energy called a solar flare, it can cause magnetic
-      storms on Earth. These storms can affect our satellites and communications
-      systems. Learning about space weather helps us protect our technology and
-      understand the environment beyond our planet.
-    </p>
+  <div class="d-flex p-3 flex-row-reverse">
+    <i
+      class="bi bi-arrow-left-circle text-white home-icon"
+      (click)="goBack()"
+    ></i>
   </div>
 </div>
+
+<!-- Dialogs for Each Planet -->
+<ng-template #sunDialog
+  ><h2 mat-dialog-title>☀️ Sun</h2>
+  <mat-dialog-content
+    >The Sun is a massive star at the center of our solar
+    system.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>
+<ng-template #mercuryDialog
+  ><h2 mat-dialog-title>🪙 Mercury</h2>
+  <mat-dialog-content
+    >Mercury is the smallest planet and closest to the Sun.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>
+<ng-template #venusDialog
+  ><h2 mat-dialog-title>🔥 Venus</h2>
+  <mat-dialog-content
+    >Venus is extremely hot with a thick, toxic atmosphere.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>
+<ng-template #earthDialog
+  ><h2 mat-dialog-title>🌍 Earth</h2>
+  <mat-dialog-content
+    >Earth is our home and the only known planet to support
+    life.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>
+<ng-template #marsDialog
+  ><h2 mat-dialog-title>🔴 Mars</h2>
+  <mat-dialog-content
+    >Mars is the Red Planet, possibly once home to life.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>
+<ng-template #jupiterDialog
+  ><h2 mat-dialog-title>🌀 Jupiter</h2>
+  <mat-dialog-content
+    >Jupiter is the largest planet, with powerful storms like the Great Red
+    Spot.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>
+<ng-template #saturnDialog
+  ><h2 mat-dialog-title>💍 Saturn</h2>
+  <mat-dialog-content
+    >Saturn is known for its beautiful and extensive ring
+    system.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>
+<ng-template #uranusDialog
+  ><h2 mat-dialog-title>🔵 Uranus</h2>
+  <mat-dialog-content
+    >Uranus rotates on its side and appears pale blue.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>
+<ng-template #neptuneDialog
+  ><h2 mat-dialog-title>🌊 Neptune</h2>
+  <mat-dialog-content
+    >Neptune is deep blue with some of the fastest winds in the solar
+    system.</mat-dialog-content
+  ><mat-dialog-actions
+    ><button mat-button mat-dialog-close>Close</button></mat-dialog-actions
+  ></ng-template
+>

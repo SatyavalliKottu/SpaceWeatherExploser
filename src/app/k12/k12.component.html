@@ -1,1 +1,49 @@
-<p>k12 works!</p>
+<i class="bi bi-house-door home-icon" (click)="goBack()"></i>
+<div class="background-container">
+  <div class="container">
+    <div class="row ps-5">
+      <div
+        class="video-wrapper pt-3 mt-3 ps-5 ms-5"
+        (mousemove)="showControlsTemporarily()"
+      >
+        <video
+          #videoPlayer
+          class="custom-video"
+          [muted]="isMuted"
+          (click)="togglePlayPause()"
+          (timeupdate)="updateProgress($event)"
+          (loadedmetadata)="setDuration(videoPlayer)"
+        >
+          <source src="../../assets/Dr.Herbert.MOV" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="video-controls" [class.hide]="!controlsVisible">
+          <button (click)="togglePlayPause()">
+            {{ isPlaying ? "⏸️" : "▶️" }}
+          </button>
+          <span
+            >{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</span
+          >
+
+          <input
+            type="range"
+            min="0"
+            [max]="duration"
+            step="0.1"
+            [(ngModel)]="currentTime"
+            (input)="seek(videoPlayer)"
+          />
+
+          <button (click)="toggleMute()">
+            {{ isMuted ? "🔇" : "🔊" }}
+          </button>
+
+          <button (click)="toggleFullscreen(videoPlayer)">
+            <i class="bi bi-aspect-ratio text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,27 +1,25 @@
-<mat-card
-  class="position-relative d-flex flex-column justify-content-center"
-  *ngIf="!isAppVisible"
->
+<mat-card class="landing-page-card" *ngIf="!isAppVisible">
   <img
     class="background-image"
     src="../assets/Solarflare.gif"
     alt="Background Image"
   />
-  <mat-card-content class="cardPosition align-items-center">
-    <mat-card-title class="title mb-5 pb-5"
-      >Welcome to Our Space Weather</mat-card-title
-    >
+
+  <div class="overlay-content text-center">
+    <mat-card-title class="title mb-5">
+      Welcome to Our Space Weather
+    </mat-card-title>
+    <br />
     <a
       type="button"
       class="newStyles mb-5 btn btn-primary btn-lg d-grid gap-2 col-3 mx-auto"
-      href="./home/home.component.html"
       routerLink="/home"
       routerLinkActive="active"
       (click)="hideAppComponent()"
     >
       EXPLORE
     </a>
-  </mat-card-content>
+  </div>
 </mat-card>
 
 <router-outlet *ngIf="isAppVisible"></router-outlet>

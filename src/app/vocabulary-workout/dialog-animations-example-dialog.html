@@ -1,7 +1,6 @@
 <div class="container dialog-container">
   <div class="tp-wrapper">
     <div class="tp-box" [@flipState]="flip" (click)="toggleFlip()">
-      <!-- Front Side -->
       <div class="tp-box__side tp-box__front">
         <img
           mat-card-avatar
@@ -22,7 +21,6 @@
         </div>
       </div>
 
-      <!-- Back Side -->
       <div class="tp-box__side tp-box__back">
         <p class="text-break m-3 p-3">
           {{ terms[activeTermIndex]?.description }}

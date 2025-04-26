@@ -6,14 +6,15 @@ import { VocabularyWorkoutComponent } from '../vocabulary-workout/vocabulary-wor
 import { NameofthePlanetComponent } from '../nameofthe-planet/nameofthe-planet.component';
 import { K12Component } from '../k12/k12.component';
 import { DynamicRenderComponent } from '../dynamic-render.component';
-
+import { GameComponent } from '../game/game.component';
 import {
   Router,
   RouterLink,
   RouterLinkActive,
   RouterOutlet,
 } from '@angular/router';
-
+import { ClassroomResourceComponent } from '../classroom-resource/classroom-resource.component';
+import { MatTabsModule } from '@angular/material/tabs';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -28,12 +29,16 @@ import {
     VocabularyWorkoutComponent,
     NameofthePlanetComponent,
     K12Component,
+    GameComponent,
+    ClassroomResourceComponent,
+    MatTabsModule,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
   isHomeVisible: boolean = true;
+  isLoggedIn: boolean = false; // ✅ Track login state
   currentComponent: any = null;
   constructor(private router: Router) {}
   private componentMap = {
@@ -50,7 +55,18 @@ export class HomeComponent {
     this.currentComponent =
       this.componentMap[componentName as keyof typeof this.componentMap];
   }
+  ngOnInit() {
+    // ✅ Check if the user is logged in (you can replace this logic with actual authentication)
+    this.isLoggedIn = !!localStorage.getItem('user'); // Assume login info stored in localStorage
+  }
   navigateToPage(path: string): void {
-    this.router.navigate([path]);
+    if (this.isLoggedIn) {
+      this.router.navigate([path]);
+    }
+  }
+  logout() {
+    localStorage.removeItem('user'); // Remove login info
+    this.isLoggedIn = false; // Update state
+    this.router.navigate(['/login']); // Redirect to login
   }
 }

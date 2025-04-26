@@ -1,33 +1,96 @@
-<!-- Fullscreen Background -->
-<img src="../../assets/Aboutimg.jpeg" alt="Background" class="fullscreen-bg" />
+<i class="bi bi-house-door home-icon" (click)="goBack()"></i>
 
-<div class="about-container">
-  <i class="bi bi-house-door home-icon"></i>
-  <div class="container mt-5">
-    <mat-card class="mb-4 shadow">
-      <mat-card-header>
-        <mat-card-title class="text-center fs-4 fw-bold"
-          >Teacher's Resource</mat-card-title
-        >
-      </mat-card-header>
-      <mat-card-content>
-        <div class="fs-5">
-          <p><strong>Lesson Plans:</strong></p>
-          <p>
-            <strong>Vocabulary Workout:</strong> Helping kids learn space terms
-            by first introducing them to each word, then holding an interactive
-            session where they flip cards to see each term's definition.
-          </p>
-          <p><strong>Key Resources:</strong></p>
-          <p>
-            Teaching kids planet names by showing pictures of all the planets in
-            the solar system in order.
-          </p>
+<div class="background-container">
+  <img
+    src="../../assets/bg-aboutpage.webp"
+    alt="Signup background"
+    class="fullscreen-bg"
+  />
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-12">
+        <!-- ✅ Custom Video Player -->
+        <div class="video-wrapper" (mousemove)="showControlsTemporarily()">
+          <video
+            #videoPlayer
+            class="custom-video"
+            [muted]="isMuted"
+            (click)="togglePlayPause()"
+            (timeupdate)="updateProgress($event)"
+            (loadedmetadata)="setDuration(videoPlayer)"
+          >
+            <source src="../../assets/Dr.Herbert.MOV" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="video-controls" [class.hide]="!controlsVisible">
+            <button (click)="togglePlayPause()">
+              {{ isPlaying ? "⏸️" : "▶️" }}
+            </button>
+            <span>
+              {{ formatTime(currentTime) }} / {{ formatTime(duration) }}
+            </span>
+            <input
+              type="range"
+              min="0"
+              [max]="duration"
+              step="0.1"
+              [(ngModel)]="currentTime"
+              (input)="seek(videoPlayer)"
+            />
+            <button (click)="toggleMute()">
+              {{ isMuted ? "🔇" : "🔊" }}
+            </button>
+            <button (click)="toggleFullscreen(videoPlayer)">
+              <i class="bi bi-aspect-ratio text-white"></i>
+            </button>
+          </div>
         </div>
-      </mat-card-content>
-      <mat-card-actions class="justify-content-center">
-        <button mat-button color="primary">Learn More</button>
-      </mat-card-actions>
-    </mat-card>
+
+        <!-- ✅ Text Content -->
+        <div class="text-white pt-4">
+          <h2 class="fw-bold">Space Weather Websites</h2>
+          <ul>
+            <li>NASA Space Place</li>
+            <li>ESA Space Weather</li>
+            <li>Space Weather Prediction Center</li>
+            <li>Space Weather Research Explorer</li>
+            <li>AGU Advancing Earth And Space Sciences</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="fw-bold pt-4">YouTube Videos</h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=nu-nqOJU55s"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                What is Space Weather?</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=e8YzKyot4Pc"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Planets In the Solar System</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 text-center">
+        <img
+          src="../../assets/S.png"
+          class="img-fluid"
+          alt="Decorative"
+          style="max-width: 100%; height: auto"
+        />
+      </div>
+    </div>
   </div>
 </div>

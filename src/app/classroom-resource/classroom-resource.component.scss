@@ -1,0 +1,18 @@
+.fullscreen-bg {
+  position: fixed; /* Keep the image fixed in the background */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Maintain aspect ratio and cover entire screen */
+  z-index: -1;
+}
+.home-icon {
+  color: #75a2c6;
+}
+div,
+h1,
+p,
+h2 {
+  color: #848ea8;
+}

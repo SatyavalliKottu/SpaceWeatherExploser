@@ -1,0 +1,76 @@
+.background-container {
+  position: relative; /* Ensure the container is over the background image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Content starts from the top */
+  align-items: center; /* Center content horizontally */
+  padding: 2rem; /* Add padding around the content */
+  min-height: 100vh; /* Expand container height dynamically */
+  overflow-y: auto; /* Enable scrolling for long content */
+  color: white;
+  background: #3c5e79;
+}
+
+.fullscreen-bg {
+  position: fixed; /* Keep the image fixed in the background */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Maintain aspect ratio and cover entire screen */
+  z-index: -1;
+}
+.video-bg {
+  width: 131vh;
+  margin-left: 14%;
+  margin-top: 3%;
+  border-radius: 10px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  .custom-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: black;
+    cursor: pointer;
+  }
+
+  .video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 46px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s ease;
+  }
+
+  .video-controls.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  input[type="range"] {
+    flex: 1;
+    accent-color: #e9efef;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

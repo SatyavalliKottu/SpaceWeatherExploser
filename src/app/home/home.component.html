@@ -4,7 +4,8 @@
     src="../../assets/classroom.jpeg"
     alt="Classroom Background"
   />
-  <button mat-flat-button class="login-signup-button third btn-color m-5">
+
+  <button mat-fab extended class="login-signup-button third btn-color m-5">
     <a
       class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
       routerLink="/login"
@@ -21,11 +22,12 @@
       Signup</a
     >
   </button>
-  <div class="menu-button-container">
+  <div class="menu-button-container p-3 mb-2 bg-dark-subtle text-dark-emphasis">
     <button
-      mat-raised-button
+      mat-button
       class="third"
       routerLink="/about"
+      [disabled]="!isLoggedIn"
       (click)="navigateToPage('/about')"
       routerLinkActive="active"
     >
@@ -33,40 +35,38 @@
     </button>
 
     <button
-      mat-raised-button
-      class="third"
-      routerLink="/k12"
-      (click)="navigateToPage('/k12')"
-      routerLinkActive="active"
-    >
-      Learning module
-    </button>
-    <button
-      mat-raised-button
-      class="third"
-      routerLink="/vocabulary"
-      (click)="navigateToPage('/vocabulary')"
-      routerLinkActive="active"
-    >
-      Vocabulary Workout
-    </button>
-    <button
-      mat-raised-button
-      class="third"
-      routerLink="/nameoftheplanet"
-      (click)="navigateToPage('/nameoftheplanet')"
-      routerLinkActive="active"
-    >
-      Name of the Planet
-    </button>
-    <button
-      mat-raised-button
+      mat-button
       class="third"
       routerLink="/teacher-resource"
+      [disabled]="!isLoggedIn"
       (click)="navigateToPage('/teacher-resource')"
       routerLinkActive="active"
     >
-      Teacher Resource
+      Teacher Resources
+    </button>
+    <button
+      mat-button
+      class="third"
+      routerLink="/game"
+      [disabled]="!isLoggedIn"
+      (click)="navigateToPage('/game')"
+      routerLinkActive="active"
+    >
+      Games
+    </button>
+
+    <button
+      mat-button
+      class="third"
+      routerLink="/classroom-resources"
+      [disabled]="!isLoggedIn"
+      (click)="navigateToPage('/classroom-resources')"
+      routerLinkActive="active"
+    >
+      Classroom Resources
+    </button>
+    <button mat-button class="third" *ngIf="isLoggedIn" (click)="logout()">
+      Logout
     </button>
   </div>
 </div>

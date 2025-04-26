@@ -26,19 +26,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  // homeComponent = HomeComponent;
   isAppVisible = false;
   constructor(private router: Router) {}
-  // title = 'SpaceWeatherExploser';
 
   hideAppComponent() {
     this.router.navigate(['home']);
     this.isAppVisible = true;
   }
-  // goBack() {
-  //   this.location.back();
-  // }
-  // goForward() {
-  //   this.location.forward();
-  // }
 }

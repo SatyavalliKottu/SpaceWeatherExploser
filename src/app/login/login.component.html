@@ -1,56 +1,76 @@
-<!-- <mat-card class="matcolor">
-  <mat-card-title>Login</mat-card-title>
-  <mat-card-content>
-    <form>
-      <p>
-        <mat-form-field>
-          <input
-            type="text"
-            matInput
-            placeholder="Username"
-            formControlName="username"
-          />
-        </mat-form-field>
-      </p>
-
-      <p>
-        <mat-form-field>
-          <input
-            type="password"
-            matInput
-            placeholder="Password"
-            formControlName="password"
-          />
-        </mat-form-field>
-      </p>
-
-      <p></p>
-
-      <div class="button">
-        <button type="submit" mat-button-primary>Login</button>
-      </div>
-    </form>
-  </mat-card-content>
-</mat-card> -->
 <div class="loginpage">
-  <!-- <img class="bg-image" src="../../assets/nasa_spaceweather.jpg" alt="" /> -->
   <div class="login-container">
-    <h2>LOGIN</h2>
-    <form id="login-form">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required />
+    <div class="container mt-5 mb-5">
+      <mat-card class="p-3 mt-3 mb-3">
+        <div class="d-flex flex-row-reverse">
+          <i class="bi bi-backspace text-white" (click)="goBack()"></i>
+        </div>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required />
+        <mat-card-title class="text-center text-light mb-3"
+          >LOGIN</mat-card-title
+        >
+        <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+          <div class="mb-3">
+            <mat-form-field
+              class="w-100"
+              appearance="outline"
+              floatLabel="always"
+            >
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="email" required />
+              <mat-error *ngIf="loginForm?.get('email')?.invalid">
+                Please enter a valid email.
+              </mat-error>
+            </mat-form-field>
+          </div>
 
-      <div class="forgot-password">
-        <a href="#">Forgot Password?</a>
-      </div>
+          <div class="mb-3">
+            <mat-form-field
+              class="w-100"
+              appearance="outline"
+              floatLabel="always"
+            >
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="password"
+                required
+              />
+              <mat-error *ngIf="loginForm?.get('password')?.invalid">
+                Password must be at least 6 characters long.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <label class="d-block text-light pb-2">
+            Don't have an account?
+          </label>
+          <span class="d-flex justify-content-between">
+            <!-- Login Redirect -->
 
-      <button type="submit">Login</button>
-      <br /><br />
-      <!-- Button to redirect to the sign-up page -->
-      <button type="button">Create an Account</button>
-    </form>
+            <div class="d-flex flex-column me-2 mb-3 w-50">
+              <button
+                mat-raised-button
+                color="primary"
+                class="w-100"
+                type="submit"
+              >
+                Login
+              </button>
+            </div>
+
+            <button
+              mat-raised-button
+              color="accent"
+              class="w-50"
+              type="button"
+              (click)="redirectToSignup()"
+            >
+              Sign Up
+            </button>
+          </span>
+        </form>
+      </mat-card>
+    </div>
   </div>
 </div>

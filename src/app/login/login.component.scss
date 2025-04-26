@@ -1,20 +1,22 @@
-:host {
-  display: flex;
-  justify-content: center;
-  margin: 100px 0px;
-}
-
-.mat-form-field {
+.loginpage {
+  background-image: url(../../assets/Space_weather_pillars.jpg);
+  position: fixed; /* Ensure it spans the entire viewport */
+  top: 6px;
+  // left: 3px;
   width: 100%;
-  min-width: 300px;
-}
-
-mat-card-title,
-mat-card-content {
+  height: 100vh; /* Full height */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Keeps the image centered */
+  background-repeat: no-repeat; /* Prevents image repetition */
 }
-
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
 .error {
   padding: 16px;
   width: 300px;
@@ -26,45 +28,10 @@ mat-card-content {
   display: flex;
   justify-content: flex-end;
 }
-.mat-mdc-card.matcolor {
-  background: white !important;
-}
-.mat-mdc-text-field-wrapper .mdc-text-field {
-  background: #cac0c0 !important;
-}
-
-.login-container {
-  background-color: rgba(
-    84,
-    81,
-    80,
-    0.7
-  ); /* Semi-transparent background to make text readable */
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 400px;
-}
 
 h2 {
   text-align: center;
   margin-bottom: 20px;
-}
-
-label {
-  font-size: 14px;
-  margin-bottom: 6px;
-  display: block;
-  border-radius: 10px;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 button {
@@ -81,28 +48,22 @@ button:hover {
   background-color: #5867ef;
 }
 
-.loginpage {
-  background-image: url(../../assets/signuplogin.png);
-  position: fixed; /* Ensure it spans the entire viewport */
-  top: 6px;
-  // left: 3px;
-  width: 100%;
-  height: 100vh; /* Full height */
+:host {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  background-size: cover; /* Ensures the image covers the entire screen */
-  background-position: center; /* Keeps the image centered */
-  background-repeat: no-repeat; /* Prevents image repetition */
+  justify-content: center;
+  margin: 100px 0px;
 }
 
-.bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  background-size: cover; /* Ensures the image covers the screen without distortion */
-  z-index: -1; /* Places the image behind other elements */
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+mat-card {
+  background: #002a3f;
+  box-shadow: 0 0 8px 10px #04111b;
 }

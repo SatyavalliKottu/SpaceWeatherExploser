@@ -1,58 +1,91 @@
-.fullscreen-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh;
-} /* Full viewport height */
-.about-container {
-  color: white;
-  position: relative; /* Ensures the container holds the background and buttons */
-  width: 100vw;
-  height: 100vh;
+.background-container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center buttons horizontally */
-  justify-content: center; /* Center buttons vertically */
-}
-
-.icon {
-  width: 30px;
-  height: 30px;
-}
-
-.home-icon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-h1 {
-  margin: 0;
-}
-
-.content {
-  position: relative;
-  z-index: 2;
-  font-size: 28px;
-  line-height: 1.6;
-  text-align: center;
-  padding: 0 20px;
-  width: 80%;
-}
-.home-icon {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 101px; /* Adjust the size of the icon */
+  min-height: 100vh;
+  overflow-y: auto;
   color: white;
-  cursor: pointer; /* Changes the cursor to a pointer */
-  z-index: 3; /* Ensure it's above all other elements */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: adds visibility over the background */
+  padding: 2rem;
 }
 
-/* Fullscreen background image */
-body {
-  margin: 0;
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.home-icon {
+  color: #848ea8;
+  font-size: 3rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  cursor: pointer;
+}
+
+// Video Section
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
   overflow: hidden;
+
+  .custom-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    background: black;
+  }
+
+  .video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s ease;
+    color: white;
+
+    input[type="range"] {
+      flex: 1;
+      accent-color: #e9efef;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .video-controls.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+// Responsive Tweaks
+@media (max-width: 768px) {
+  .home-icon {
+    font-size: 1.5rem;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .video-controls {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }

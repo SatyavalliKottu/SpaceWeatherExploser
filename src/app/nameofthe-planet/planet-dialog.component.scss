@@ -1,0 +1,100 @@
+.dialog-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.fullscreen-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.dialog-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px;
+  gap: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.dialog-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+}
+
+.badge-section {
+  margin-bottom: 20px;
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .badge {
+    background-color: #421f65;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.dialog-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .planet-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border: 2px solid white;
+    border-radius: 20px;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: white;
+  color: black;
+}
+
+.home-icon {
+  top: 45px !important;
+  font-size: 25px !important;
+}

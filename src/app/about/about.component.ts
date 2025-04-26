@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class AboutComponent {
   constructor(private location: Location, private router: Router) {}
 
-  // goBack(): void {
-  //   this.location.back(); // This will navigate back to the previous page
-  // }
+  goBack(): void {
+    this.location.back(); // This will navigate back to the previous page
+  }
 }

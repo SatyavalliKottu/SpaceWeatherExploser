@@ -1,17 +1,39 @@
 .background-image {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover; /* Ensures the image covers the screen without distortion */
-  z-index: -1; /* Sends the background image behind other elements */
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.landing-page-card {
+  height: 100vh;
+  width: 100vw;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  margin: auto;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-  color: white; /* Make text visible */
-  font-size: 2.5rem; /* Adjust size as needed */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Enhances readability */
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .newStyles {
@@ -26,8 +48,14 @@
     background-color: #0056b3;
   }
 }
-.cardPosition {
-  position: absolute;
-  top: 217px;
-  left: 404px;
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .newStyles {
+    width: 80%;
+    font-size: 1rem;
+  }
 }

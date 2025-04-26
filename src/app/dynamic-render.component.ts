@@ -46,7 +46,4 @@ export class DynamicRenderComponent implements OnChanges {
       });
     }
   }
-  // goBack() {
-  //   this.router.navigate(['/home']); // Navigate back to the home component
-  // }
 }
